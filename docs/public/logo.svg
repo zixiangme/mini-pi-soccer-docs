@@ -1,0 +1,38 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- 足球场背景 -->
+  <rect width="120" height="120" fill="#10b981" rx="20"/>
+
+  <!-- 草地纹理 -->
+  <g opacity="0.1">
+    <line x1="0" y1="30" x2="120" y2="30" stroke="#fff" stroke-width="2"/>
+    <line x1="0" y1="60" x2="120" y2="60" stroke="#fff" stroke-width="2"/>
+    <line x1="0" y1="90" x2="120" y2="90" stroke="#fff" stroke-width="2"/>
+  </g>
+
+  <!-- 足球 -->
+  <circle cx="60" cy="60" r="25" fill="#fff"/>
+  <g stroke="#000" stroke-width="2" fill="none">
+    <path d="M 60 35 L 60 45"/>
+    <path d="M 60 75 L 60 85"/>
+    <path d="M 35 60 L 45 60"/>
+    <path d="M 75 60 L 85 60"/>
+    <path d="M 45 45 L 52 52"/>
+    <path d="M 68 68 L 75 75"/>
+    <path d="M 75 45 L 68 52"/>
+    <path d="M 52 68 L 45 75"/>
+  </g>
+
+  <!-- 机器人元素 -->
+  <g transform="translate(60, 60)">
+    <!-- 机器人头部 -->
+    <rect x="-8" y="-15" width="16" height="12" fill="#3b82f6" rx="2"/>
+    <!-- 眼睛 -->
+    <circle cx="-4" cy="-10" r="2" fill="#fff"/>
+    <circle cx="4" cy="-10" r="2" fill="#fff"/>
+  </g>
+
+  <!-- 文字 Pi+ -->
+  <text x="60" y="105" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">
+    Pi+
+  </text>
+</svg>
