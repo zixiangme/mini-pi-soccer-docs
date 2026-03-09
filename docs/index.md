@@ -41,6 +41,16 @@ features:
 /* 移除旧样式，使用全局主题 */
 </style>
 
+## 🎬 精彩演示
+
+<div class="video-container">
+  <video controls autoplay muted loop playsinline>
+    <source src="/demo.mp4" type="video/mp4">
+    您的浏览器不支持视频播放
+  </video>
+  <p class="video-caption">Mini Pi+ 足球机器人实战演示</p>
+</div>
+
 ## 🏟️ 平台与产品
 
 <div class="products-grid">
@@ -95,6 +105,34 @@ features:
 </div>
 
 <style scoped>
+.video-container {
+  max-width: 900px;
+  margin: 48px auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.video-container video {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(16, 185, 129, 0.3);
+  border: 3px solid rgba(16, 185, 129, 0.3);
+  transition: all 0.3s;
+}
+
+.video-container video:hover {
+  box-shadow: 0 16px 50px rgba(16, 185, 129, 0.4);
+  border-color: #10b981;
+  transform: scale(1.02);
+}
+
+.video-caption {
+  margin-top: 16px;
+  font-size: 16px;
+  color: var(--vp-c-text-2);
+  font-weight: 500;
+}
+
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
