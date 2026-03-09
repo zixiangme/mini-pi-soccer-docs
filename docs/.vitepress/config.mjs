@@ -12,7 +12,7 @@ export default defineConfig({
   ],
 
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/company-logo.png',
 
     nav: [
       { text: '⚽ 首页', link: '/' },
