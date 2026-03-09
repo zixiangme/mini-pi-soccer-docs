@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/mini-pi-soccer-docs/',
   title: 'Mini Pi+ Soccer',
   description: 'Mini Pi+ 足球应用开发指南',
   lang: 'zh-CN',
