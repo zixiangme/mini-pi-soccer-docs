@@ -45,7 +45,7 @@
 - 场地线条宽度
 
 这些值可以作为常量放在 constant.yml 的代码中，默认我们使用的是 KIDSIZE 参数，如果测试的球场跟这些数值不一致，可以修改为自己的值。
-![测试球场的数值](/home/sunteng/mini-pi-docs/docs/public/tutorial-images/ceshiqiuchang.png)
+![测试球场的数值](tutorial-images/ceshiqiuchang.png)
 
 ```yaml
 dbehavior:
