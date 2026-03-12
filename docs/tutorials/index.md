@@ -91,12 +91,15 @@ dbehavior:
 ### 远程 ssh 控制
 
 安装 Visual Studio Code 软件 🔗 https://code.visualstudio.com/download
+！[vscode界面]（/tutorial-images/image(2).png）
 
 打开 Visual Studio Code 软件在左侧应用中心搜索 Remote-SSH 插件，进行安装
+！[ssh下载](/tutorial-images/image(3).png)
 
 确保机器人已经正常启动安装后左侧会多出一个远程小电脑的图标，进入后点击 "+" 即可添加机器人设备
 
 输入示例为**机器人用户名@IP地址** 这里可以参考机器人用户名默认为 nvidia，ip 地址为 192.168.110.16
+![机器人用户名@IP地址](/tutorial-images/image(4).png)
 
 然后回车后输入机器人密码 **nvidia** 后，选择 Linux，第一次连接需要等待一段时间，即可进入下面的界面，点击打开文件夹即可
 
