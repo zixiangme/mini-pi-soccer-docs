@@ -86,41 +86,27 @@ dbehavior:
 
 联网后，键盘同时按下 ctrl+alt+t 打开终端输入 `ifconfig` 后可查找机器人的 IP 地址（例如：192.168.110.73）
 
-![网络配置截图](/tutorial-images/network-config.png)
-
 ### 远程 ssh 控制
 
 安装 Visual Studio Code 软件 🔗 https://code.visualstudio.com/download
 
-![VS Code 下载页面](/tutorial-images/vscode-download.png)
-
 打开 Visual Studio Code 软件在左侧应用中心搜索 Remote-SSH 插件，进行安装
-
-![Remote SSH 插件](/tutorial-images/remote-ssh-plugin.png)
 
 确保机器人已经正常启动安装后左侧会多出一个远程小电脑的图标，进入后点击 "+" 即可添加机器人设备
 
 输入示例为**机器人用户名@IP地址** 这里可以参考机器人用户名默认为 nvidia，ip 地址为 192.168.110.16
 
-![SSH 连接配置](/tutorial-images/ssh-config.png)
-
 然后回车后输入机器人密码 **nvidia** 后，选择 Linux，第一次连接需要等待一段时间，即可进入下面的界面，点击打开文件夹即可
-
-![SSH 连接成功](/tutorial-images/ssh-connected.png)
 
 ### 自主识别代码部署流程
 
 鼠标右键桌面打开终端，输入 `code .` 打开 VScode
-
-![打开 VSCode](/tutorial-images/open-vscode.png)
 
 在右下角的终端输入下载代码指令
 
 ```bash
 git clone https://github.com/HighTorque-Robotics/RoboCup_Workspace.git
 ```
-
-![Git Clone 命令](/tutorial-images/git-clone.png)
 
 在左侧的文件夹内找到 bashrc 文件并打开将下方代码粘贴至 bashrc 文件内容末尾
 
@@ -131,16 +117,12 @@ export ZJUDANCER_ROBOTID=1
 source /home/nvidia/RoboCup_Workspace/core/devel/setup.bash
 ```
 
-![Bashrc 配置](/tutorial-images/bashrc-config.png)
-
 在右下角的终端窗口，依次输入
 
 ```bash
 cd lib/
 catkin_make
 ```
-
-![编译过程](/tutorial-images/catkin-make.png)
 
 等待加载到 100% 后编译完成
 
@@ -150,8 +132,6 @@ catkin_make
 cd ../core
 catkin_make
 ```
-
-![Core 编译](/tutorial-images/core-build.png)
 
 机器人站立解锁，处于可以通过遥控的状态后关闭手柄控制话题：
 
@@ -181,15 +161,11 @@ roslaunch sim2real_master joy_teleop.launch use_filter:=true
 roslaunch claunch piplus.launch
 ```
 
-![启动视觉识别](/tutorial-images/launch-vision.png)
-
 此时机器人即可自动识别足球
 
 ## 机器人对应参数修改
 
 机器人的编号要在之前培训过的 .bashrc 文件中的一行中修改，如下图 ZJUDANCER_ROBOTID
-
-![机器人ID配置](/tutorial-images/robot-id-config.png)
 
 RoboCup_Workspace/core/src/dconfig/global.yml 里面的 role 本次比赛能设置的只有三个：Striker Defender GoalKeeper
 
@@ -203,14 +179,8 @@ UseGameController 要和 GC 同时改，是否要听取裁判盒。
 
 根据已方半场位置设置进攻方向 AttackRight :True 为进攻右侧球门 :False 为进攻左侧球门
 
-![全局配置](/tutorial-images/global-config.png)
-
 GameControllerAddress：裁判盒 ip，在使用裁判盒的电脑上查询并填写。
 
 TeamNumber 应该是我们判断启动时选择的两个队伍的 ID 之一。
 
-![团队配置](/tutorial-images/team-config.png)
-
 这里的 role 的 value 也要同步改：
-
-![角色配置](/tutorial-images/role-config.png)
