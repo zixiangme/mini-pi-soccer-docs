@@ -46,7 +46,6 @@
 
 这些值可以作为常量放在 constant.yml 的代码中，默认我们使用的是 KIDSIZE 参数，如果测试的球场跟这些数值不一致，可以修改为自己的值。
 
-![测试球场的数值](/tutorial-images/ceshiqiuchang.png)
 
 ```yaml
 dbehavior:
@@ -87,6 +86,7 @@ dbehavior:
 使用 HDMI 线缆入机器人背板 HDMI 口，进入可视化界面，同时在机器人背板 USB 口上插入键盘鼠标，直接在机器人电脑上进行控制。在右上角的 Connect WIFI 选择需要连接的网络，进行联网。
 
 联网后，键盘同时按下 ctrl+alt+t 打开终端输入 `ifconfig` 后可查找机器人的 IP 地址（例如：192.168.110.73）
+![ip地址](/tutorial-images/image(1).png)
 
 ### 远程 ssh 控制
 
