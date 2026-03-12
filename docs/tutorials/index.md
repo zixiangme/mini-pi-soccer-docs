@@ -1,174 +1,216 @@
-# 教程
+# Mini Pi+ 应用开发指南——足球
 
-欢迎来到 Mini Pi+ 教程中心！这里提供从入门到进阶的完整教程。
+## 说明
 
-## 🎯 入门教程
+在进行 Mini Pi+ 应用开发前，需要对产品使用有一定理解，请先阅读 Mini Pi+ 产品使用手册。
 
-适合初学者，帮助你快速上手 Mini Pi+ 开发。
+📖 **产品手册链接**: https://www.hightorque.cn/chapter/mini-pi%e4%ba%a7%e5%93%81%e4%bd%bf%e7%94%a8%e6%89%8b%e5%86%8c
 
-### [基础动作控制](/tutorials/basic-motion)
-学习如何控制机器人的基本动作：站立、行走、转向等。
+## 软件环境
 
-**你将学到：**
-- 初始化机器人
-- 控制基本姿态
-- 实现行走和转向
-- 读取传感器数据
+操作系统为 Ubuntu 20.04 ROS1 Noetic/ROS2 Foxy
 
-**难度：** ⭐ 初级 | **时长：** 30 分钟
+## 真机测试
 
----
+## 目标
 
-### [踢球动作](/tutorials/kick)
-实现机器人的踢球动作，这是足球应用的核心功能。
+演示机器人自主踢球全流程
 
-**你将学到：**
-- 踢球动作原理
-- 不同踢球方式
-- 力度和方向控制
-- 动作序列编排
+## 准备
 
-**难度：** ⭐⭐ 中级 | **时长：** 45 分钟
+### 测试场地
+- 球场（标线清晰）
+- 足球
 
----
+### Mini Pi+机器人
 
-### [守门动作](/tutorials/goalkeeper)
-学习守门员的专属动作：扑救、站位、出击。
+### 普通工作电脑
+- 工作电脑可以是常规的操作系统（Windows、Ubuntu、MacOS 等）
+- 需要有 ssh 相关工具，用于远程连接机器人
 
-**你将学到：**
-- 守门员站位
-- 扑救动作
-- 反应速度优化
-- 预判算法
+## 确定球场尺寸
 
-**难度：** ⭐⭐ 中级 | **时长：** 45 分钟
+在 RoboCup Workspace/core/src/dbehavior/config 路径下的 constant.yml 文件，需要根据球场尺寸来进行定位和距离计算，如果测试的球场大小跟文件内参数的不一致，需要更改相应配置，在此之前，我们需要测试球场的以下维度（单位 m）：
 
-## 🚀 进阶教程
+- 球场长度
+- 球场宽度
+- 球门深度
+- 球门宽度
+- 球门高度
+- 小禁区长度
+- 小禁区宽度
+- 点球点距离
+- 中圈直径
+- 场地边界宽度
+- 场地线条宽度
 
-适合有一定基础的开发者，深入学习高级功能。
+这些值可以作为常量放在 constant.yml 的代码中，默认我们使用的是 KIDSIZE 参数，如果测试的球场跟这些数值不一致，可以修改为自己的值。
 
-### 视觉识别系统
-- 摄像头标定
-- 目标检测算法
-- 实时图像处理
-- 多目标跟踪
+```yaml
+dbehavior:
+  geometry:
+    field_length: 900
+    field_width: 600
+    goal_depth: 60
+    goal_width: 260
+    goal_height: 180
+    goal_area_length: 20
+    goal_area_width: 300
+    penalty_mark_distance: 150
+    center_circle_diameter: 150
+    border_strip_width: 70
+    line_width: 5
+  robot:
+    num_player: 6
+    max_pitch: 70
+    min_pitch: -15
+    max_yaw: 75
+    min_yaw: -75
+    walk_speed: 450 / 26
+    turn_speed: 10
+  team:
+    teaminfo_outdated: 0.5
+    ball_share_enabled: False
+    pace: False
+```
 
-**难度：** ⭐⭐⭐ 高级 | **时长：** 2 小时
+## 全流程自主识别代码部署与应用
 
----
+### 机器人启动与联网
 
-### 多机器人协同
-- 通信协议
-- 角色分配
-- 团队策略
-- 冲突避免
+按照产品手册的流程启动机器人
 
-**难度：** ⭐⭐⭐ 高级 | **时长：** 2 小时
+📖 **启动流程参考**: https://www.hightorque.cn/chapter/mini-pi%e4%ba%a7%e5%93%81%e4%bd%bf%e7%94%a8%e6%89%8b%e5%86%8c
 
----
+使用 HDMI 线缆入机器人背板 HDMI 口，进入可视化界面，同时在机器人背板 USB 口上插入键盘鼠标，直接在机器人电脑上进行控制。在右上角的 Connect WIFI 选择需要连接的网络，进行联网。
 
-### 性能优化
-- 代码优化技巧
-- 实时性保证
-- 资源管理
-- 调试工具使用
+联网后，键盘同时按下 ctrl+alt+t 打开终端输入 `ifconfig` 后可查找机器人的 IP 地址（例如：192.168.110.73）
 
-**难度：** ⭐⭐⭐ 高级 | **时长：** 1.5 小时
+![网络配置截图](/tutorial-images/network-config.png)
 
-## 📚 专题教程
+### 远程 ssh 控制
 
-针对特定主题的深入教程。
+安装 Visual Studio Code 软件 🔗 https://code.visualstudio.com/download
 
-### 足球比赛策略
-- 进攻策略
-- 防守策略
-- 定位球战术
-- 比赛状态机
+![VS Code 下载页面](/tutorial-images/vscode-download.png)
 
-### 传感器融合
-- IMU 数据处理
-- 力传感器应用
-- 多传感器融合
-- 状态估计
+打开 Visual Studio Code 软件在左侧应用中心搜索 Remote-SSH 插件，进行安装
 
-### 仿真环境
-- 仿真器安装
-- 虚拟环境搭建
-- 仿真测试
-- 真机迁移
+![Remote SSH 插件](/tutorial-images/remote-ssh-plugin.png)
 
-## 🎓 学习路径
+确保机器人已经正常启动安装后左侧会多出一个远程小电脑的图标，进入后点击 "+" 即可添加机器人设备
 
-### 路径 1: 快速入门（1-2 天）
-1. [环境配置](/guide/setup)
-2. [基础动作控制](/tutorials/basic-motion)
-3. [踢球动作](/tutorials/kick)
-4. 运行示例程序
+输入示例为**机器人用户名@IP地址** 这里可以参考机器人用户名默认为 nvidia，ip 地址为 192.168.110.16
 
-### 路径 2: 足球应用开发（1-2 周）
-1. 完成快速入门
-2. [视觉识别](/soccer/vision)
-3. [运动控制](/soccer/motion)
-4. [策略规划](/soccer/strategy)
-5. 实战项目
+![SSH 连接配置](/tutorial-images/ssh-config.png)
 
-### 路径 3: 高级开发（1 个月+）
-1. 完成足球应用开发
-2. 多机器人协同
-3. 性能优化
-4. 参加比赛
+然后回车后输入机器人密码 **nvidia** 后，选择 Linux，第一次连接需要等待一段时间，即可进入下面的界面，点击打开文件夹即可
 
-## 💡 实战项目
+![SSH 连接成功](/tutorial-images/ssh-connected.png)
 
-### 项目 1: 简单追球机器人
-**目标：** 实现一个能够追逐足球并踢球的简单机器人
+### 自主识别代码部署流程
 
-**涉及知识：**
-- 视觉识别
-- 运动控制
-- 简单决策
+鼠标右键桌面打开终端，输入 `code .` 打开 VScode
 
-**难度：** ⭐⭐ 中级
+![打开 VSCode](/tutorial-images/open-vscode.png)
 
----
+在右下角的终端输入下载代码指令
 
-### 项目 2: 守门机器人
-**目标：** 实现一个能够守门的机器人
+```bash
+git clone https://github.com/HighTorque-Robotics/RoboCup_Workspace.git
+```
 
-**涉及知识：**
-- 球门定位
-- 守门动作
-- 反应速度
+![Git Clone 命令](/tutorial-images/git-clone.png)
 
-**难度：** ⭐⭐⭐ 高级
+在左侧的文件夹内找到 bashrc 文件并打开将下方代码粘贴至 bashrc 文件内容末尾
 
----
+```bash
+export ZJUDANCER_GPU=1
+export LD_LIBRARY_PATH=/usr/lib/aarch64-linux-gnu:/usr/local/cuda-11.4/lib64:$LD_LIBRARY_PATH
+export ZJUDANCER_ROBOTID=1
+source /home/nvidia/RoboCup_Workspace/core/devel/setup.bash
+```
 
-### 项目 3: 团队协作系统
-**目标：** 实现多个机器人的协同作战
+![Bashrc 配置](/tutorial-images/bashrc-config.png)
 
-**涉及知识：**
-- 通信协议
-- 角色分配
-- 团队策略
+在右下角的终端窗口，依次输入
 
-**难度：** ⭐⭐⭐⭐ 专家级
+```bash
+cd lib/
+catkin_make
+```
 
-## 📖 学习资源
+![编译过程](/tutorial-images/catkin-make.png)
 
-- [API 文档](/guide/api)
-- [示例代码](https://github.com/your-repo/mini-pi-examples)
-- [视频教程](https://youtube.com/your-channel)
-- [开发者社区](https://forum.minipi.com)
+等待加载到 100% 后编译完成
 
-## 🤝 获取帮助
+接下来依次输入
 
-在学习过程中遇到问题？
+```bash
+cd ../core
+catkin_make
+```
 
-- 查看 [常见问题](/guide/faq)
-- 在 [GitHub](https://github.com/your-repo/mini-pi-soccer/issues) 提问
-- 加入开发者社区交流
+![Core 编译](/tutorial-images/core-build.png)
 
-## 下一步
+机器人站立解锁，处于可以通过遥控的状态后关闭手柄控制话题：
 
-选择一个适合你的教程开始学习吧！推荐从 [基础动作控制](/tutorials/basic-motion) 开始。
+终端输入 `rosnode kill /joy_teleop`
+
+```bash
+nvidia@ubuntu:~$ rosnode kill /joy_teleop
+killing /joy_teleop
+killed
+```
+
+恢复手柄控制使用指令
+
+首先
+```bash
+source /home/nvidia/sim2real_master/sim2real_master/devel/setup.bash
+```
+
+然后
+```bash
+roslaunch sim2real_master joy_teleop.launch use_filter:=true
+```
+
+### 运行视觉识别程序，终端运行
+
+```bash
+roslaunch claunch piplus.launch
+```
+
+![启动视觉识别](/tutorial-images/launch-vision.png)
+
+此时机器人即可自动识别足球
+
+## 机器人对应参数修改
+
+机器人的编号要在之前培训过的 .bashrc 文件中的一行中修改，如下图 ZJUDANCER_ROBOTID
+
+![机器人ID配置](/tutorial-images/robot-id-config.png)
+
+RoboCup_Workspace/core/src/dconfig/global.yml 里面的 role 本次比赛能设置的只有三个：Striker Defender GoalKeeper
+
+::: tip 注意
+如需听到判断指令，要在对应 role 的名字面前上 GC，例如 GCStriker
+:::
+
+::: warning 注意
+UseGameController 要和 GC 同时改，是否要听取裁判盒。
+:::
+
+根据已方半场位置设置进攻方向 AttackRight :True 为进攻右侧球门 :False 为进攻左侧球门
+
+![全局配置](/tutorial-images/global-config.png)
+
+GameControllerAddress：裁判盒 ip，在使用裁判盒的电脑上查询并填写。
+
+TeamNumber 应该是我们判断启动时选择的两个队伍的 ID 之一。
+
+![团队配置](/tutorial-images/team-config.png)
+
+这里的 role 的 value 也要同步改：
+
+![角色配置](/tutorial-images/role-config.png)
