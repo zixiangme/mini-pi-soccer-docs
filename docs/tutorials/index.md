@@ -91,10 +91,10 @@ dbehavior:
 ### 远程 ssh 控制
 
 安装 Visual Studio Code 软件 🔗 https://code.visualstudio.com/download
-！[vscode界面]（/tutorial-images/image(2).png）
+![vscode界面]（/tutorial-images/image(2).png）
 
 打开 Visual Studio Code 软件在左侧应用中心搜索 Remote-SSH 插件，进行安装
-！[ssh下载](/tutorial-images/image(3).png)
+![ssh下载](/tutorial-images/image(3).png)
 
 确保机器人已经正常启动安装后左侧会多出一个远程小电脑的图标，进入后点击 "+" 即可添加机器人设备
 
