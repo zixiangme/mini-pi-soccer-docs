@@ -332,7 +332,7 @@ body {
   z-index: 1;
 }
 
-/* 模块标题通用样式 - 纯白 + 足球图标 + 绿色下划线 */
+/* 模块标题通用样式 - 纯白 + 绿色下划线 */
 .home-content-wrapper h2,
 .VPHome h2 {
   color: var(--soccer-white) !important;
@@ -343,14 +343,6 @@ body {
   padding: 48px 24px 0;
   text-align: center;
   position: relative;
-}
-
-/* 为所有模块标题添加足球主题图标 */
-.home-content-wrapper h2::before,
-.VPHome h2::before {
-  font-size: 2.2rem;
-  margin-right: 12px;
-  filter: drop-shadow(0 2px 6px rgba(34, 197, 94, 0.6));
 }
 
 /* 模块标题下划线 */
@@ -399,23 +391,6 @@ body {
     0 20px 60px rgba(0, 0, 0, 0.7),
     0 0 0 1px rgba(74, 222, 128, 0.3),
     0 0 20px rgba(34, 197, 94, 0.4);
-}
-
-/* 视频标题文字蒙版 */
-.video-container::after {
-  content: '⚽ Mini Pi+ 足球机器人实战演示';
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(10, 77, 46, 0.9);
-  color: var(--soccer-white);
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
 /* ============================================================
@@ -472,12 +447,6 @@ body {
   overflow: hidden;
 }
 
-.VPButton.brand::before {
-  content: '🚀';
-  margin-right: 8px;
-  font-size: 1.1rem;
-}
-
 .VPButton.brand:hover {
   background: var(--soccer-dark-green) !important;
   border-color: var(--soccer-dark-green) !important;
@@ -499,12 +468,6 @@ body {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition: all 0.3s ease;
-}
-
-.VPButton.alt::before {
-  content: '⚽';
-  margin-right: 8px;
-  font-size: 1.1rem;
 }
 
 .VPButton.alt:hover {
@@ -559,41 +522,31 @@ body {
    ============================================================ */
 
 .VPNav {
-  background: var(--soccer-glass-bg) !important;
+  background: var(--soccer-deep-green) !important;
   border-bottom: 1px solid rgba(34, 197, 94, 0.25) !important;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   transition: all 0.3s ease;
 }
 
-/* 滚动时增强毛玻璃效果 */
+/* 滚动时保持稳定背景 */
 .VPNav.scrolled {
-  background: rgba(10, 77, 46, 0.98) !important;
+  background: var(--soccer-deep-green) !important;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .dark .VPNav {
-  background: rgba(10, 77, 46, 0.97) !important;
+  background: var(--soccer-deep-green) !important;
   border-bottom: 1px solid rgba(34, 197, 94, 0.3) !important;
 }
 
-/* 品牌名 - 纯白加粗 + 足球图标 */
+/* 品牌名 - 纯白加粗，移除图标 */
 .VPNavBarTitle .title {
   color: var(--soccer-white) !important;
   font-weight: var(--soccer-title-weight);
   font-size: 1.1rem;
   background: none !important;
   -webkit-text-fill-color: var(--soccer-white) !important;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-/* 为品牌名添加足球图标 */
-.VPNavBarTitle .title::before {
-  content: '⚽';
-  font-size: 1.2rem;
-  filter: drop-shadow(0 0 4px rgba(34, 197, 94, 0.6));
 }
 
 /* 导航链接 - 纯白文字，绿色高亮 */
@@ -754,18 +707,6 @@ body {
   border-bottom-color: var(--soccer-bright-green);
   gap: 10px;
   transform: translateX(4px);
-}
-
-/* 中间卡片足球纹理水印 */
-.product-card:nth-child(2)::before {
-  content: '⚽';
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 4rem;
-  opacity: 0.05;
-  pointer-events: none;
-  transform: rotate(15deg);
 }
 
 /* ============================================================
