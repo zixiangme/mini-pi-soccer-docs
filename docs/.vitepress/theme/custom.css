@@ -42,18 +42,18 @@
   --vp-c-bg-mute: #232930;
 }
 
-/* 整个首页背景 - 足球场图片固定在页面背后 */
+/* 整个首页背景 - 使用新的足球场渲染图 */
 .VPHome {
   position: relative;
-  background-image: url('/apperance.png');
-  background-size: cover;
+  background-image: url('/new.png');
+  background-size: contain;
   background-position: center top;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: #0a4d2e;
   min-height: 100vh;
 }
 
-/* 全局遮罩层 - 让所有内容在背景上清晰可见 */
+/* 全局遮罩层 - 轻微遮罩，保留图片细节 */
 .VPHome::before {
   content: '';
   position: fixed;
@@ -63,10 +63,10 @@
   bottom: 0;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(5, 150, 105, 0.4) 30%,
-    rgba(0, 0, 0, 0.6) 70%,
-    rgba(0, 0, 0, 0.8) 100%
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(10, 77, 46, 0.3) 20%,
+    rgba(0, 0, 0, 0.4) 80%,
+    rgba(0, 0, 0, 0.7) 100%
   );
   pointer-events: none;
   z-index: 0;
@@ -82,43 +82,6 @@
   position: relative;
   overflow: hidden;
   background: transparent;
-}
-
-/* 添加半透明遮罩层，让文字更清晰 */
-.VPHero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(5, 150, 105, 0.5) 50%,
-    rgba(0, 0, 0, 0.6) 100%
-  );
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* 添加草地纹理效果 */
-.VPHero::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 50px,
-    rgba(16, 185, 129, 0.1) 50px,
-    rgba(16, 185, 129, 0.1) 52px
-  );
-  pointer-events: none;
-  z-index: 1;
 }
 
 .VPHero .container {
