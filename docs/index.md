@@ -41,7 +41,7 @@ features:
 /* 移除旧样式，使用全局主题 */
 </style>
 
-## 🎬 精彩演示
+## 🎬 实战演示
 
 <div class="video-container">
   <video controls autoplay muted loop playsinline>
