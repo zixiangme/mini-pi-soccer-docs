@@ -28,8 +28,6 @@ hero:
 
 </div>
 
-## 🚀 核心特性
-
 <div class="features-grid">
   <div class="feature-card">
     <div class="feature-icon">⚽</div>
