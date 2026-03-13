@@ -1079,7 +1079,7 @@ div[class*='language-']::before {
   max-width: 1200px;
 }
 
-/* 特性卡片 - 纯白背景 + 足球主题边框 */
+/* 特性卡片 - 纯白背景 + 足球主题边框 + 可点击链接 */
 .feature-card {
   background: var(--soccer-card-bg);
   border: 2px solid var(--soccer-border-light);
@@ -1090,6 +1090,9 @@ div[class*='language-']::before {
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* 卡片hover效果 - 绿色边框 + 上浮 */
@@ -1100,6 +1103,7 @@ div[class*='language-']::before {
   box-shadow:
     0 12px 32px rgba(34, 197, 94, 0.15),
     0 4px 16px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
 }
 
 /* 足球主题图标容器 */

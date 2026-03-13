@@ -26,41 +26,41 @@ hero:
 </div>
 
 <div class="features-grid">
-  <div class="feature-card">
+  <a href="/en/soccer/motion" class="feature-card">
     <div class="feature-icon">⚽</div>
     <h3>High-Performance Motion Control</h3>
     <p>Advanced kinematic algorithms enable smooth kicking, positioning, and goalkeeping actions, allowing robots to move freely on the field</p>
-  </div>
+  </a>
 
-  <div class="feature-card">
+  <a href="/en/soccer/vision" class="feature-card">
     <div class="feature-icon">👁️</div>
     <h3>Intelligent Vision Recognition</h3>
     <p>Real-time recognition of ball, goal, and teammate positions with multi-target tracking for precise localization of every key object</p>
-  </div>
+  </a>
 
-  <div class="feature-card">
+  <a href="/en/soccer/behavior" class="feature-card">
     <div class="feature-icon">🤝</div>
     <h3>Multi-Robot Coordination</h3>
     <p>Support for multi-robot coordination to implement complex tactical systems and build perfect teams</p>
-  </div>
+  </a>
 
-  <div class="feature-card">
+  <a href="/en/guide/" class="feature-card">
     <div class="feature-icon">📚</div>
     <h3>Complete Documentation</h3>
     <p>From beginner to expert, comprehensive API documentation and practical tutorials help you get started quickly</p>
-  </div>
+  </a>
 
-  <div class="feature-card">
+  <a href="/en/guide/sdk" class="feature-card">
     <div class="feature-icon">🎯</div>
     <h3>Modular Architecture</h3>
     <p>Flexible architecture design for easy extension and customization to meet various competition requirements</p>
-  </div>
+  </a>
 
-  <div class="feature-card">
+  <a href="/en/guide/debug" class="feature-card">
     <div class="feature-icon">🔧</div>
     <h3>Real-time Debugging Tools</h3>
     <p>Powerful debugging tools and simulation environment for quick problem identification and resolution</p>
-  </div>
+  </a>
 </div>
 
 </div>
