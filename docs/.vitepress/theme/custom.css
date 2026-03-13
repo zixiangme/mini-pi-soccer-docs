@@ -42,12 +42,17 @@
   --vp-c-bg-mute: #232930;
 }
 
-/* Hero 区域样式 */
+/* Hero 区域样式 - 足球场背景 */
 .VPHero {
   position: relative;
   overflow: hidden;
+  background-image: url('/apperance.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
+/* 添加半透明遮罩层，让文字更清晰 */
 .VPHero::before {
   content: '';
   position: absolute;
@@ -55,32 +60,69 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background:
-    linear-gradient(180deg, rgba(16, 185, 129, 0.05) 0%, transparent 100%),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 50px,
-      rgba(16, 185, 129, 0.03) 50px,
-      rgba(16, 185, 129, 0.03) 52px
-    );
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(5, 150, 105, 0.5) 50%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
   pointer-events: none;
   z-index: 0;
 }
 
-.VPHero .container {
-  position: relative;
+/* 添加草地纹理效果 */
+.VPHero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 50px,
+    rgba(16, 185, 129, 0.1) 50px,
+    rgba(16, 185, 129, 0.1) 52px
+  );
+  pointer-events: none;
   z-index: 1;
 }
 
-/* Hero 标题渐变效果 */
+.VPHero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero 标题 - 白色带阴影，在绿色背景上清晰可见 */
 .VPHero .name {
-  background: var(--vp-home-hero-name-background);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 800;
-  text-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+  color: #ffffff !important;
+  background: none !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-weight: 900;
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.8),
+    0 4px 20px rgba(16, 185, 129, 0.6),
+    0 0 40px rgba(16, 185, 129, 0.4);
+  letter-spacing: 2px;
+}
+
+/* Hero 副标题 - 亮绿色 */
+.VPHero .text {
+  color: #6ee7b7 !important;
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(110, 231, 183, 0.5);
+  font-weight: 700;
+}
+
+/* Hero 标语 - 白色 */
+.VPHero .tagline {
+  color: #f0fdf4 !important;
+  text-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.8),
+    0 0 15px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
 }
 
 /* 特性卡片 - 足球场草地纹理 */
@@ -129,15 +171,18 @@
   filter: drop-shadow(0 4px 8px rgba(16, 185, 129, 0.3));
 }
 
-/* 按钮样式 - 足球风格 */
+/* 按钮样式 - 足球风格，增强对比度 */
 .VPButton.brand {
-  background: var(--vp-button-brand-bg);
-  border: none;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border: 2px solid rgba(255, 255, 255, 0.3);
   position: relative;
   overflow: hidden;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
 }
 
 .VPButton.brand::before {
@@ -148,7 +193,7 @@
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
   transform: translate(-50%, -50%);
   transition: width 0.6s, height 0.6s;
 }
@@ -159,9 +204,27 @@
 }
 
 .VPButton.brand:hover {
-  background: var(--vp-button-brand-hover-bg);
+  background: linear-gradient(135deg, #059669, #047857);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.6);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Alt 按钮样式 */
+.VPButton.alt {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff !important;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.VPButton.alt:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.6);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* 导航栏 - 科技感 */
