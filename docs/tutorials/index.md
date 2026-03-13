@@ -102,6 +102,7 @@ dbehavior:
 ![机器人用户名@IP地址](/tutorial-images/image(4).png)
 
 然后回车后输入机器人密码 **nvidia** 后，选择 Linux，第一次连接需要等待一段时间，即可进入下面的界面，点击打开文件夹即可
+![打开文件夹]（/tutorial-images/image(5).png）
 
 ### 自主识别代码部署流程
 

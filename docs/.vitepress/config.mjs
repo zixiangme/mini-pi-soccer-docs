@@ -44,20 +44,14 @@ export default defineConfig({
 
       '/soccer/': [
         {
-          text: '⚽ 足球应用开发',
+          text: '⚽ 足球应用系统',
           items: [
-            { text: '概述', link: '/soccer/' },
-            { text: '运动控制', link: '/soccer/motion' },
-            { text: '视觉识别', link: '/soccer/vision' },
-            { text: '策略规划', link: '/soccer/strategy' }
-          ]
-        },
-        {
-          text: '🚀 高级功能',
-          items: [
-            { text: '多机协同', link: '/soccer/multi-robot' },
-            { text: '实时通信', link: '/soccer/communication' },
-            { text: '性能优化', link: '/soccer/optimization' }
+            { text: '系统概述', link: '/soccer/' },
+            { text: '🎥 视觉系统', link: '/soccer/vision' },
+            { text: '🧠 行为决策', link: '/soccer/behavior' },
+            { text: '🎯 运动控制', link: '/soccer/motion' },
+            { text: '🌐 网络通信', link: '/soccer/network' },
+            { text: '⚙️ 配置管理', link: '/soccer/config' }
           ]
         }
       ],
