@@ -42,14 +42,46 @@
   --vp-c-bg-mute: #232930;
 }
 
-/* Hero 区域样式 - 足球场背景 */
+/* 整个首页背景 - 足球场图片固定在页面背后 */
+.VPHome {
+  position: relative;
+  background-image: url('/apperance.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* 全局遮罩层 - 让所有内容在背景上清晰可见 */
+.VPHome::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(5, 150, 105, 0.4) 30%,
+    rgba(0, 0, 0, 0.6) 70%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.VPHome > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero 区域样式 */
 .VPHero {
   position: relative;
   overflow: hidden;
-  background-image: url('/apperance.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: transparent;
 }
 
 /* 添加半透明遮罩层，让文字更清晰 */
@@ -125,12 +157,38 @@
   font-weight: 500;
 }
 
-/* 特性卡片 - 足球场草地纹理 */
+/* Features 区域背景透明 */
+.VPFeatures {
+  background: transparent !important;
+}
+
+.VPFeatures .container {
+  background: transparent !important;
+}
+
+/* 特性卡片文字颜色 - 确保在深色背景上清晰 */
+.VPFeature .title {
+  color: #ffffff !important;
+  font-weight: 700;
+}
+
+.VPFeature .details {
+  color: #d1fae5 !important;
+}
+
+/* 首页内容区域背景透明 */
+.VPDoc, .VPContent {
+  background: transparent !important;
+}
+
+
 .VPFeature {
   border: 2px solid transparent;
   background:
-    linear-gradient(var(--vp-c-bg-soft), var(--vp-c-bg-soft)) padding-box,
+    linear-gradient(rgba(15, 20, 25, 0.7), rgba(15, 20, 25, 0.7)) padding-box,
     linear-gradient(135deg, #10b981, #059669) border-box;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
