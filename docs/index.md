@@ -11,7 +11,7 @@ hero:
   actions:
     - theme: brand
       text: 🚀 快速开始
-      link: /guide/
+      link: /tutorials/
     - theme: alt
       text: ⚽ 足球应用
       link: /soccer/
@@ -58,7 +58,7 @@ features:
     <div class="card-icon"><img src="/robot-icon.png" alt="Mini Pi+" style="width: 40px; height: 40px; border-radius: 8px;"></div>
     <h3>Mini Pi+ 机器人</h3>
     <p>高性能人形机器人平台，专为足球竞赛优化，灵活敏捷的运动能力</p>
-    <a href="/guide/" class="card-link">了解更多 →</a>
+    <a href="/tutorials/" class="card-link">了解更多 →</a>
   </div>
 
   <div class="product-card soccer-field">
