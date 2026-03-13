@@ -12,6 +12,24 @@ hero:
     - theme: alt
       text: ⚽ 足球应用
       link: /soccer/
+---
+
+<div class="home-content-wrapper">
+
+## 🎬 实战演示
+
+<div class="video-container">
+  <video controls autoplay muted loop playsinline>
+    <source src="/demo.mp4" type="video/mp4">
+    您的浏览器不支持视频播放
+  </video>
+  <p class="video-caption">⚽ Mini Pi+ 足球机器人实战演示</p>
+</div>
+
+</div>
+
+---
+layout: home
 
 features:
   - icon: ⚽
@@ -35,16 +53,6 @@ features:
 ---
 
 <div class="home-content-wrapper">
-
-## 🎬 实战演示
-
-<div class="video-container">
-  <video controls autoplay muted loop playsinline>
-    <source src="/demo.mp4" type="video/mp4">
-    您的浏览器不支持视频播放
-  </video>
-  <p class="video-caption">⚽ Mini Pi+ 足球机器人实战演示</p>
-</div>
 
 ## 🏟️ 平台与产品
 
