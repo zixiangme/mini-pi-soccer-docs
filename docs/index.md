@@ -23,7 +23,6 @@ hero:
     <source src="/demo.mp4" type="video/mp4">
     您的浏览器不支持视频播放
   </video>
-  <p class="video-caption">⚽ Mini Pi+ 足球机器人实战演示</p>
 </div>
 
 <div class="features-grid">
