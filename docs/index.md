@@ -28,29 +28,45 @@ hero:
 
 </div>
 
----
-layout: home
+## 🚀 核心特性
 
-features:
-  - icon: ⚽
-    title: 高性能运动控制
-    details: 基于先进的运动学算法，实现流畅的踢球、走位和守门动作，让机器人在绿茵场上自如奔跑
-  - icon: 👁️
-    title: 智能视觉识别
-    details: 实时识别足球、球门和队友位置，支持多目标跟踪，精准定位每一个关键目标
-  - icon: 🤝
-    title: 多机协同作战
-    details: 支持多台机器人协同配合，实现复杂的战术体系，打造完美团队
-  - icon: 📚
-    title: 完整开发文档
-    details: 从入门到精通，提供详细的 API 文档和实战教程，助你快速上手
-  - icon: 🎯
-    title: 模块化架构
-    details: 灵活的架构设计，方便扩展和定制功能，满足各种比赛需求
-  - icon: 🔧
-    title: 实时调试工具
-    details: 强大的调试工具和仿真环境，快速定位和解决问题
----
+<div class="features-grid">
+  <div class="feature-card">
+    <div class="feature-icon">⚽</div>
+    <h3>高性能运动控制</h3>
+    <p>基于先进的运动学算法，实现流畅的踢球、走位和守门动作，让机器人在绿茵场上自如奔跑</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">👁️</div>
+    <h3>智能视觉识别</h3>
+    <p>实时识别足球、球门和队友位置，支持多目标跟踪，精准定位每一个关键目标</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">🤝</div>
+    <h3>多机协同作战</h3>
+    <p>支持多台机器人协同配合，实现复杂的战术体系，打造完美团队</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">📚</div>
+    <h3>完整开发文档</h3>
+    <p>从入门到精通，提供详细的 API 文档和实战教程，助你快速上手</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">🎯</div>
+    <h3>模块化架构</h3>
+    <p>灵活的架构设计，方便扩展和定制功能，满足各种比赛需求</p>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-icon">🔧</div>
+    <h3>实时调试工具</h3>
+    <p>强大的调试工具和仿真环境，快速定位和解决问题</p>
+  </div>
+</div>
 
 <div class="home-content-wrapper">
 
