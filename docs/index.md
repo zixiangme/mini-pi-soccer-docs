@@ -26,8 +26,6 @@ hero:
   <p class="video-caption">⚽ Mini Pi+ 足球机器人实战演示</p>
 </div>
 
-</div>
-
 <div class="features-grid">
   <div class="feature-card">
     <div class="feature-icon">⚽</div>
