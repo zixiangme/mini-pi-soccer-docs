@@ -12,8 +12,40 @@
   <span style="margin-left: 16px; color: #888; font-size: 13px;">sim2real_master-feature-master_and_slave_orin_wuandhou.tar.gz（408 MB）</span>
 </div>
 
+<div style="margin: 24px 0;">
+  <a href="https://github.com/zixiangme/mini-pi-soccer-docs/releases/download/v1.0.0/pi_plus_autostart.desktop"
+     style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: #4a90e2; color: white; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px;">
+    ⬇ 下载开机自启动配置脚本
+  </a>
+  <span style="margin-left: 16px; color: #888; font-size: 13px;">pi_plus_autostart.desktop（224 B）</span>
+</div>
+
 ---
 
 ## 部署说明
 
-> 以下部署步骤将在此处补充，请等待更新。
+### 1. 解压 SDK 安装包
+
+将下载的压缩包放入主目录下，在终端中执行：
+
+```bash
+tar -zxvf sim2real_master-feature-master_and_slave_orin_wuandhou.tar.gz
+```
+
+### 2. 配置开机自启动
+
+删除旧的自启动程序：
+
+```bash
+rm -rf /home/nvidia/.config/autostart/*
+```
+
+将下载的 `pi_plus_autostart.desktop` 文件移动到自启动目录：
+
+```bash
+mv pi_plus_autostart.desktop /home/nvidia/.config/autostart/
+```
+
+### 3. 重启机器人
+
+完成以上步骤后，重新启动机器人即可自动运行运控程序。
