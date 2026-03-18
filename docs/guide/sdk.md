@@ -5,7 +5,7 @@
 点击下方按钮下载最新版本的运动控制 SDK 安装包：
 
 <div style="margin: 24px 0;">
-  <a href="/downloads/sim2real_master-feature-master_and_slave_orin_wuandhou.tar.gz"
+  <a href="https://github.com/zixiangme/mini-pi-soccer-docs/releases/download/v1.0.0/sim2real_master-feature-master_and_slave_orin_wuandhou.tar.gz"
      style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: #2d8a4e; color: white; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px;">
     ⬇ 下载 sim2real SDK 安装包
   </a>
