@@ -9,3 +9,4 @@ uploads/
 *.pdf
 .env
 .vercel
+docs/public/downloads/*.tar.gz
