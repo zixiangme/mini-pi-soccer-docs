@@ -1077,6 +1077,8 @@ div[class*='language-']::before {
   margin: 0 auto 80px;
   padding: 0 24px;
   max-width: 1200px;
+  position: relative;
+  z-index: 10;
 }
 
 /* 特性卡片 - 纯白背景 + 足球主题边框 + 可点击链接 */
@@ -1093,6 +1095,8 @@ div[class*='language-']::before {
   display: block;
   text-decoration: none;
   color: inherit;
+  z-index: 10;
+  cursor: pointer;
 }
 
 /* 卡片hover效果 - 绿色边框 + 上浮 */

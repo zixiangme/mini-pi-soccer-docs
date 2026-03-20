@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/nvidia/sim2real_master-feature-master_and_slave/sim2real_pi_plus_orin.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=12
+Name=lr
+Comment[en_US]=
+Comment=

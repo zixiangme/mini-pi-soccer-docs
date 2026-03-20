@@ -125,6 +125,8 @@ hero:
   background: linear-gradient(180deg, rgba(10, 54, 34, 0.96) 0%, rgba(10, 54, 34, 0.99) 100%);
   padding: 48px 24px 64px;
   margin-top: -1px;
+  position: relative;
+  z-index: 5;
 }
 
 .home-content-wrapper h2 {
