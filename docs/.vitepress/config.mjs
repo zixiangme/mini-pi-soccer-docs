@@ -23,16 +23,13 @@ export default defineConfig({
               text: '⚡ 快速开始',
               items: [
                 { text: '简介', link: '/guide/' },
-                { text: '环境配置', link: '/guide/setup' },
-                { text: '硬件连接', link: '/guide/hardware' }
+                { text: '环境配置', link: '/guide/setup' }
               ]
             },
             {
               text: '💻 软件开发',
               items: [
-                { text: 'SDK 安装', link: '/guide/sdk' },
-                { text: 'API 参考', link: '/guide/api' },
-                { text: '调试工具', link: '/guide/debug' }
+                { text: 'SDK 安装', link: '/guide/sdk' }
               ]
             }
           ],
@@ -105,16 +102,13 @@ export default defineConfig({
               text: '⚡ Quick Start',
               items: [
                 { text: 'Introduction', link: '/en/guide/' },
-                { text: 'Environment Setup', link: '/en/guide/setup' },
-                { text: 'Hardware Connection', link: '/en/guide/hardware' }
+                { text: 'Environment Setup', link: '/en/guide/setup' }
               ]
             },
             {
               text: '💻 Software Development',
               items: [
-                { text: 'SDK Installation', link: '/en/guide/sdk' },
-                { text: 'API Reference', link: '/en/guide/api' },
-                { text: 'Debug Tools', link: '/en/guide/debug' }
+                { text: 'SDK Installation', link: '/en/guide/sdk' }
               ]
             }
           ],
