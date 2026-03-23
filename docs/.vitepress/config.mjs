@@ -22,8 +22,7 @@ export default defineConfig({
             {
               text: '⚡ 快速开始',
               items: [
-                { text: '简介', link: '/guide/' },
-                { text: '环境配置', link: '/guide/setup' }
+                { text: '简介', link: '/guide/' }
               ]
             },
             {
@@ -98,8 +97,7 @@ export default defineConfig({
             {
               text: '⚡ Quick Start',
               items: [
-                { text: 'Introduction', link: '/en/guide/' },
-                { text: 'Environment Setup', link: '/en/guide/setup' }
+                { text: 'Introduction', link: '/en/guide/' }
               ]
             },
             {
