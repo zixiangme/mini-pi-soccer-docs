@@ -50,10 +50,7 @@ export default defineConfig({
             {
               text: '📖 教程',
               items: [
-                { text: '入门教程', link: '/tutorials/' },
-                { text: '基础动作', link: '/tutorials/basic-motion' },
-                { text: '踢球动作', link: '/tutorials/kick' },
-                { text: '守门动作', link: '/tutorials/goalkeeper' }
+                { text: '入门教程', link: '/tutorials/' }
               ]
             }
           ]
@@ -129,10 +126,7 @@ export default defineConfig({
             {
               text: '📖 Tutorials',
               items: [
-                { text: 'Getting Started', link: '/en/tutorials/' },
-                { text: 'Basic Motion', link: '/en/tutorials/basic-motion' },
-                { text: 'Kick Action', link: '/en/tutorials/kick' },
-                { text: 'Goalkeeper Action', link: '/en/tutorials/goalkeeper' }
+                { text: 'Getting Started', link: '/en/tutorials/' }
               ]
             }
           ]
