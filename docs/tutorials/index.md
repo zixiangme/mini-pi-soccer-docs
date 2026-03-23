@@ -107,11 +107,13 @@ dbehavior:
 ### 自主识别代码部署流程
 
 鼠标右键桌面打开终端，输入 `code .` 打开 VScode
+![打开文件夹]（/tutorial-images/image(6).png）
 
 在右下角的终端输入下载代码指令
 
 ```bash
 git clone https://github.com/HighTorque-Robotics/RoboCup_Workspace.git
+![打开文件夹]（/tutorial-images/image(7).png）
 ```
 
 在左侧的文件夹内找到 bashrc 文件并打开将下方代码粘贴至 bashrc 文件内容末尾
@@ -122,6 +124,7 @@ export LD_LIBRARY_PATH=/usr/lib/aarch64-linux-gnu:/usr/local/cuda-11.4/lib64:$LD
 export ZJUDANCER_ROBOTID=1
 source /home/nvidia/RoboCup_Workspace/core/devel/setup.bash
 ```
+![打开文件夹]（/tutorial-images/image(8).png）
 
 在右下角的终端窗口，依次输入
 
@@ -129,6 +132,7 @@ source /home/nvidia/RoboCup_Workspace/core/devel/setup.bash
 cd lib/
 catkin_make
 ```
+![打开文件夹]（/tutorial-images/image(9).png）
 
 等待加载到 100% 后编译完成
 
@@ -138,16 +142,13 @@ catkin_make
 cd ../core
 catkin_make
 ```
+![打开文件夹]（/tutorial-images/image(10).png）
 
 机器人站立解锁，处于可以通过遥控的状态后关闭手柄控制话题：
 
 终端输入 `rosnode kill /joy_teleop`
+![打开文件夹]（/tutorial-images/image(11).png）
 
-```bash
-nvidia@ubuntu:~$ rosnode kill /joy_teleop
-killing /joy_teleop
-killed
-```
 
 恢复手柄控制使用指令
 
@@ -166,12 +167,14 @@ roslaunch sim2real_master joy_teleop.launch use_filter:=true
 ```bash
 roslaunch claunch piplus.launch
 ```
+![打开文件夹]（/tutorial-images/image(12).png）
 
 此时机器人即可自动识别足球
 
 ## 机器人对应参数修改
 
 机器人的编号要在之前培训过的 .bashrc 文件中的一行中修改，如下图 ZJUDANCER_ROBOTID
+![打开文件夹]（/tutorial-images/image(13).png）
 
 RoboCup_Workspace/core/src/dconfig/global.yml 里面的 role 本次比赛能设置的只有三个：Striker Defender GoalKeeper
 
@@ -188,5 +191,65 @@ UseGameController 要和 GC 同时改，是否要听取裁判盒。
 GameControllerAddress：裁判盒 ip，在使用裁判盒的电脑上查询并填写。
 
 TeamNumber 应该是我们判断启动时选择的两个队伍的 ID 之一。
+![打开文件夹]（/tutorial-images/image(14).png）
 
 这里的 role 的 value 也要同步改：
+![打开文件夹]（/tutorial-images/image(15).png）
+
+机器人放在场边的位置dbehavior/config/role.yml 有不同角色的机器人放在场边的位置坐标start_pos。
+![打开文件夹]（/tutorial-images/image(16).png）
+
+机器人进场时面朝的方向为y轴正方向，右侧为x轴正方向，坐标系原点为球场中心。
+kickoff_pos是进场后要走到的位置。
+⚠️注意：坐标设置要在己方半场，不能超出范围。
+可以想到，在己方半场两条边线上放置的机器人对于场地上同一个点的坐标的描述是相反的，两台机器人认为的坐标值刚好关于原点对称。所以两台机器人在相互通信时，从不同边线放置的机器人之间有一个位置的翻译机制，在dbehavior/src/dbehavior/core/dblackboard.py 中的update_teaminfo函数中。
+![打开文件夹]（/tutorial-images/image(17).png）
+
+role.yaml以上的pos是默认按照我方半场是左半场（AttackRight=True），机器人放在左下边线去写的，dbehavior在读取这些pos时，设置为AttackRight=True的机器人会把start_pos关于y轴对称，其他 pos关于原点对称处理，进行这些处理的代码也在dbehavior/src/dbehavior/core/dblackboard.py 中。
+
+## 裁判盒使用方法
+裁判盒下载链接：
+https://github.com/RoboCup-Humanoid-TC/GameController/releases
+windows/ubuntu/mac均可，RoboCup官方的裁判盒程序，用来给机器人发送指令，使机器人正常进场，进球后回到己方半场
+### 比赛准备阶段：
+点开GameController，按照下列选项配置：
+Competition选择Kid Size的比赛模式（小型机器人）
+Invisibles改两只队伍的名字9
+Color选择不同队伍的颜色
+Mirror(home team starts on right side)左右互换，为了将屏幕上的队伍与场地上的队伍对应起来
+Interface选择网口：windows电脑选择WLAN；ubuntu通过ifconfig指令查询网口
+然后点击start进入如下界面：
+![打开文件夹]（/tutorial-images/image(18).png）
+![打开文件夹]（/tutorial-images/image(19).png）
+
+先打开这个软件，再在机器人上点launch（⚠️注意：先后顺序不要弄反，否则无法接收裁判盒指令）
+点击launch后将机器人放在己方半场两条边线中的任意一边。此时机器人的头会转动寻找场地的特征点初始化自己的定位，但是不会移动。
+等待裁判点击Ready后，在倒计时内机器人走到场内yaml文件中设定的开球位置，到达指定位置后点击Set按钮提前结束倒计时，接下来将足球放在场地中间，准备开始比赛。
+设置编号时设置1-3，不要设置更多的了，编号设置方式将在第二部分monitor使用方法里讲解。
+
+### 比赛开始阶段：
+点击Playing按钮比赛开始当有一方进球时，裁判会点击goal按钮计分，随后机器人会回到己方半场开球时的等待位置。如果机器人提前到达指定位置，裁判依然可以通过点击Set按钮结束等待时间，再点击Playing继续进行比赛。
+计时结束后点击finish按钮钮结束比赛。
+遇到特殊情况机器人失去自主行动能力时，裁判员可以点击Pick Up/Incapable按钮再点击对应的机器人序号，将机器人罚下。机器人检修完毕后，裁判员再次点击对应的机器人序号结束罚下指令，10秒倒计时结束后可自动上场参加比赛。
+### monitor使用方法
+主要参考vscode中readme部分，强调一下teamID部分，如下图：
+![打开文件夹]（/tutorial-images/image(20).png）
+
+编译过后会生成一个build文件夹，在build中新建上述图片提到的config.json并写入队伍编号team_id。
+这样就会防止不同队伍间产生干扰。
+
+常见Q&A汇总
+1、安装双系统来不及/不会
+答：在b站上找教程，对于初次安装的人来讲确实难度不小，但是实测虚拟机也可以完成对机器人的操作和部署。
+2、clash verge翻墙软件不会弄/弄不好
+答：很多人不知道怎么订阅，可以通过todesk/ssh将git上的代码通过自己的windows电脑传输到机器人上。
+3、todesk/ssh连接不稳定，总断。
+答：使用VSode的remote-ssh插件进行远程连接，如果网络不稳定，建议使用自己电脑终端的ssh 用户名@IP地址 远程到机器人上，同时需要熟悉Linux常用指令和vim编辑器的指令
+4、一碰撞相机就接触不良/代码跑死
+答：持续碰撞1-3秒相机显示就会断开，暂无解决问题的好办法，尽量避免碰撞，
+5、遥控器连不上/连上不能按指令操作
+答：需要通过长按手柄的控制键5s左右后，再按下手柄相应组合建试试机器人模式切换是否有反应，如一次不成功，需要多尝试几次
+![打开文件夹]（/tutorial-images/image(21).png）
+6、相机运行2、3分钟后，机器人原地转圈
+说明自主识别代码已经挂掉了，终端需要重新拉起自主识别roslaunch dlaunch piplus.launch
+
