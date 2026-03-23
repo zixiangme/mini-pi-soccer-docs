@@ -28,7 +28,8 @@ export default defineConfig({
             {
               text: '💻 软件开发',
               items: [
-                { text: 'SDK 安装', link: '/guide/sdk' }
+                { text: 'SDK 安装', link: '/guide/sdk' },
+                { text: '足球策略文件', link: '/guide/strategy' }
               ]
             }
           ],
@@ -103,7 +104,8 @@ export default defineConfig({
             {
               text: '💻 Software Development',
               items: [
-                { text: 'SDK Installation', link: '/en/guide/sdk' }
+                { text: 'SDK Installation', link: '/en/guide/sdk' },
+                { text: 'Football Strategy Files', link: '/en/guide/strategy' }
               ]
             }
           ],

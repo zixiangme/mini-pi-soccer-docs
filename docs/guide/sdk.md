@@ -22,31 +22,6 @@
 
 ---
 
-## 足球策略文件
-
-下载预训练的足球策略文件，包含 AMP 策略、ByondMimic 足球动作策略等：
-
-<div style="margin: 24px 0;">
-  <a href="https://github.com/zixiangme/mini-pi-soccer-docs/releases/download/v1.0.0/football_strategy_files.tar.gz"
-     style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: #e67e22; color: white; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px;">
-    ⬇ 下载足球策略文件
-  </a>
-  <span style="margin-left: 16px; color: #888; font-size: 13px;">football_strategy_files.tar.gz（49 MB）</span>
-</div>
-
-**解压说明：**
-
-```bash
-tar -zxvf football_strategy_files.tar.gz
-```
-
-解压后包含以下内容：
-- `AMP_policy/` - AMP 策略文件
-- `ByondMimic_football_action_policy/` - ByondMimic 足球动作策略
-- `football_data/` - 足球训练数据
-
----
-
 ## 部署说明
 
 ### 1. 解压 SDK 安装包
