@@ -20,6 +20,12 @@ Click the button below to download the latest version of the motion control SDK 
   <span style="margin-left: 16px; color: #888; font-size: 13px;">pi_plus_autostart.zip (extracts to pi_plus_autostart.desktop)</span>
 </div>
 
+---
+
+## Football Strategy Files
+
+Download pre-trained football strategy files, including AMP policy, ByondMimic football action policy, and more:
+
 <div style="margin: 24px 0;">
   <a href="https://github.com/zixiangme/mini-pi-soccer-docs/releases/download/v1.0.0/football_strategy_files.tar.gz"
      style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: #e67e22; color: white; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 15px;">
@@ -27,6 +33,17 @@ Click the button below to download the latest version of the motion control SDK 
   </a>
   <span style="margin-left: 16px; color: #888; font-size: 13px;">football_strategy_files.tar.gz (49 MB)</span>
 </div>
+
+**Extraction Instructions:**
+
+```bash
+tar -zxvf football_strategy_files.tar.gz
+```
+
+After extraction, the package contains:
+- `AMP_policy/` - AMP policy files
+- `ByondMimic_football_action_policy/` - ByondMimic football action policy
+- `football_data/` - Football training data
 
 ---
 
