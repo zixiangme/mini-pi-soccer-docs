@@ -13,9 +13,9 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: '⚽ 首页', link: '/' },
-          { text: '🎮 开发指南', link: '/guide/' },
+          { text: '📚 资源下载', link: '/guide/' },
           { text: '🤖 足球应用', link: '/soccer/' },
-          { text: '📚 教程', link: '/tutorials/' },
+          { text: '🎮 教程', link: '/tutorials/' },
         ],
         sidebar: {
           '/guide/': [
