@@ -120,7 +120,7 @@ hero:
 </div>
 
 <style>
-/* 内容区深绿打底，彻底解决文字与背景融合 */
+/* Deep green content background to improve text contrast */
 .home-content-wrapper {
   background: linear-gradient(180deg, rgba(10, 54, 34, 0.96) 0%, rgba(10, 54, 34, 0.99) 100%);
   padding: 48px 24px 64px;

@@ -89,9 +89,9 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: '⚽ Home', link: '/en/' },
-          { text: '🎮 Dev Guide', link: '/en/guide/' },
+          { text: '📚 Resources', link: '/en/guide/' },
           { text: '🤖 Soccer Apps', link: '/en/soccer/' },
-          { text: '📚 Tutorials', link: '/en/tutorials/' },
+          { text: '🎮 Deployment', link: '/en/tutorials/' },
         ],
         sidebar: {
           '/en/guide/': [
@@ -105,7 +105,8 @@ export default defineConfig({
               text: '💻 Software Development',
               items: [
                 { text: 'SDK Installation', link: '/en/guide/sdk' },
-                { text: 'Football Strategy Files', link: '/en/guide/strategy' }
+                { text: 'Football Strategy Files', link: '/en/guide/strategy' },
+                { text: 'Robot URDF File Download', link: '/en/guide/urdf' }
               ]
             }
           ],
