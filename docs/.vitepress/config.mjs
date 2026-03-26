@@ -15,7 +15,7 @@ export default defineConfig({
           { text: '⚽ 首页', link: '/' },
           { text: '📚 资源下载', link: '/guide/' },
           { text: '🤖 足球应用', link: '/soccer/' },
-          { text: '🎮 教程', link: '/tutorials/' },
+          { text: '🎮 部署教程', link: '/tutorials/' },
         ],
         sidebar: {
           '/guide/': [
