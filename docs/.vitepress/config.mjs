@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   base: '/mini-pi-soccer-docs/',
+  appearance: 'dark',
 
   locales: {
     root: {
@@ -15,7 +16,6 @@ export default defineConfig({
           { text: '🎮 开发指南', link: '/guide/' },
           { text: '🤖 足球应用', link: '/soccer/' },
           { text: '📚 教程', link: '/tutorials/' },
-          { text: '📤 上传文档', link: '/upload' }
         ],
         sidebar: {
           '/guide/': [
@@ -92,7 +92,6 @@ export default defineConfig({
           { text: '🎮 Dev Guide', link: '/en/guide/' },
           { text: '🤖 Soccer Apps', link: '/en/soccer/' },
           { text: '📚 Tutorials', link: '/en/tutorials/' },
-          { text: '📤 Upload Docs', link: '/en/upload' }
         ],
         sidebar: {
           '/en/guide/': [
