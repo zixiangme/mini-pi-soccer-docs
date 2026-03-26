@@ -29,7 +29,8 @@ export default defineConfig({
               text: '💻 软件开发',
               items: [
                 { text: 'SDK 安装', link: '/guide/sdk' },
-                { text: '足球策略文件', link: '/guide/strategy' }
+                { text: '足球策略文件', link: '/guide/strategy' },
+                { text: '机器人URDF文件下载', link: '/guide/urdf' }
               ]
             }
           ],

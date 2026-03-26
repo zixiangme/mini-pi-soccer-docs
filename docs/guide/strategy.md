@@ -25,7 +25,7 @@ tar -zxvf football_strategy_files.tar.gz
 解压后包含以下目录：
 
 ### 📁 AMP_policy/
-AMP (Adversarial Motion Priors) 策略文件，用于生成自然流畅的运动动作。
+AMP (Adversarial Motion Priors) 策略文件，用于生成自然流畅的步态运动动作。
 
 ### 📁 ByondMimic_football_action_policy/
 ByondMimic 足球动作策略文件，包含专门针对足球比赛优化的动作策略：
