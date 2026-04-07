@@ -113,8 +113,8 @@ dbehavior:
 
 ```bash
 git clone https://github.com/HighTorque-Robotics/RoboCup_Workspace.git
-![2](/tutorial-images/image(7).png)
 ```
+![2](/tutorial-images/image(7).png)
 
 在左侧的文件夹内找到 bashrc 文件并打开将下方代码粘贴至 bashrc 文件内容末尾
 
@@ -154,7 +154,7 @@ catkin_make
 
 首先
 ```bash
-source /home/nvidia/sim2real_master/sim2real_master/devel/setup.bash
+source /home/nvidia/sim2real_master/devel/setup.bash
 ```
 
 然后
