@@ -150,26 +150,26 @@ catkin_make
 ![6](/tutorial-images/image(11).png)
 
 
+### 运行视觉识别程序，终端运行
+
+```bash
+roslaunch dlaunch piplus.launch
+```
+![7](/tutorial-images/image(12).png)
+
+此时机器人即可自动识别足球
+
 恢复手柄控制使用指令
 
 首先
 ```bash
-source /home/nvidia/sim2real_master/devel/setup.bash
+source /home/nvidia/sim2real/install/setup.bash
 ```
 
 然后
 ```bash
 roslaunch sim2real_master joy_teleop.launch use_filter:=true
 ```
-
-### 运行视觉识别程序，终端运行
-
-```bash
-roslaunch claunch piplus.launch
-```
-![7](/tutorial-images/image(12).png)
-
-此时机器人即可自动识别足球
 
 ## 机器人对应参数修改
 
