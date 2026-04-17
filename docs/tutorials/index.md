@@ -159,11 +159,20 @@ roslaunch dlaunch piplus.launch
 
 此时机器人即可自动识别足球
 
+让机器人停止移动，发布话题
+```bash
+rostopic pub -r 10 /cmd_vel geometry_msgs/Twist '{linear: {x: 0, y: 0, z: 0}, angular: {x: 0, y: 0, z: 0}}'
+```bash
+
 恢复手柄控制使用指令
 
 首先
 ```bash
 source /home/nvidia/sim2real/install/setup.bash
+```
+若不成功，试一下
+```bash
+source /home/nvidia/sim2real_master-feature-master_and_slave/install/setup.bash
 ```
 
 然后
